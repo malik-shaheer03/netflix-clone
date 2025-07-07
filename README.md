@@ -10,7 +10,7 @@
   
   **A pixel-perfect Netflix clone with real-time data integration and secure authentication** 🍿
   
-  [🌐 Live Demo](https://netflix-clone-5bu7.vercel.app/) • [Features](#-key-highlights) • [Tech Stack](#️-tech-stack) • [Installation](#-installation)
+  [Features](#-key-highlights) • [Tech Stack](#️-tech-stack) • [Installation](#-installation)
 </div>
 
 ## 🚀 About
