@@ -176,9 +176,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
   <strong>Made with ❤️ and lots of ☕</strong>
   <br><br>
   ⭐ If you found this project useful, please consider giving it a star!
-  <br><br>
-  <strong>🔗 Live Demo:</strong> <a href="https://netflix-clone-5bu7.vercel.app/">https://netflix-clone-5bu7.vercel.app/</a>
+  
 </div>
-
-## 📌 Tags
-`#NetflixClone` `#NextJS` `#TypeScript` `#TailwindCSS` `#Firebase` `#TMDB` `#WebDevelopment` `#FrontendDevelopment` `#ReactJS` `#ModernWebDev` `#ResponsiveDesign` `#UIDesign` `#PersonalProject` `#DeveloperPortfolio`
