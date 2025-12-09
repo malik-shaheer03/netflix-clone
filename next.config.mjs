@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+// Security headers configuration for production deployment
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
