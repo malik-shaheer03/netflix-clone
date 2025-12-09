@@ -30,6 +30,14 @@ export interface MovieDetails extends Movie {
       type: string
     }[]
   }
+  credits?: {
+    cast: {
+      id: number
+      name: string
+      character: string
+      profile_path: string | null
+    }[]
+  }
 }
 
 export const tmdbApi = {
@@ -82,12 +90,12 @@ export const tmdbApi = {
   },
 
   getMovieDetails: async (id: number): Promise<MovieDetails> => {
-    const response = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=videos`)
+    const response = await fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=videos,credits`)
     return response.json()
   },
 
   getTVDetails: async (id: number): Promise<MovieDetails> => {
-    const response = await fetch(`${BASE_URL}/tv/${id}?api_key=${API_KEY}&append_to_response=videos`)
+    const response = await fetch(`${BASE_URL}/tv/${id}?api_key=${API_KEY}&append_to_response=videos,credits`)
     return response.json()
   },
 

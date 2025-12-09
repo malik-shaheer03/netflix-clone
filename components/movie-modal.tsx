@@ -285,7 +285,12 @@ export function MovieModal({
                 <div className="space-y-4">
                   <div>
                     <span className="text-gray-400">Cast: </span>
-                    <span className="text-white">Ryan Reynolds, Blake Lively, Peter Sarsgaard, Mark Strong</span>
+                    <span className="text-white">
+                      {movieDetails?.credits?.cast
+                        ?.slice(0, 4)
+                        .map((actor) => actor.name)
+                        .join(", ") || "Cast information not available"}
+                    </span>
                   </div>
 
                   {movieDetails?.genres && (
@@ -297,7 +302,36 @@ export function MovieModal({
 
                   <div>
                     <span className="text-gray-400">This {movie.title ? "movie" : "show"} is: </span>
-                    <span className="text-white">Exciting, Action-packed, Suspenseful</span>
+                    <span className="text-white">
+                      {movieDetails?.genres
+                        ?.slice(0, 3)
+                        .map((genre) => {
+                          // Convert genre names to descriptive adjectives
+                          const descriptors: { [key: string]: string } = {
+                            Action: "Action-packed",
+                            Adventure: "Thrilling", 
+                            Animation: "Animated",
+                            Comedy: "Hilarious",
+                            Crime: "Suspenseful",
+                            Documentary: "Informative",
+                            Drama: "Emotional",
+                            Family: "Family-friendly",
+                            Fantasy: "Magical",
+                            History: "Historical",
+                            Horror: "Terrifying",
+                            Music: "Musical",
+                            Mystery: "Mysterious",
+                            Romance: "Romantic",
+                            "Science Fiction": "Futuristic",
+                            "TV Movie": "Compelling",
+                            Thriller: "Intense",
+                            War: "Epic",
+                            Western: "Classic"
+                          };
+                          return descriptors[genre.name] || genre.name;
+                        })
+                        .join(", ") || "Entertaining"}
+                    </span>
                   </div>
                 </div>
               </div>
