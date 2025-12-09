@@ -10,9 +10,31 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 }
 
+
+// Enhanced debugging
+console.log('🔍 Firebase Environment Variables Debug:')
+console.log('NEXT_PUBLIC_FIREBASE_API_KEY:', process.env.NEXT_PUBLIC_FIREBASE_API_KEY ? 'Set ✅' : 'Missing ❌')
+console.log('NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN:', process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ? 'Set ✅' : 'Missing ❌')
+console.log('NEXT_PUBLIC_FIREBASE_PROJECT_ID:', process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ? 'Set ✅' : 'Missing ❌')
+
+console.log('🔧 Firebase Config Object:', firebaseConfig)
+
+// Validate required config
+if (!firebaseConfig.apiKey || !firebaseConfig.authDomain || !firebaseConfig.projectId) {
+  console.error('❌ Firebase configuration is incomplete!')
+  console.log('Missing values:', {
+    apiKey: !firebaseConfig.apiKey,
+    authDomain: !firebaseConfig.authDomain,
+    projectId: !firebaseConfig.projectId,
+  })
+  throw new Error('Firebase configuration is incomplete. Please check your environment variables.')
+}
+
+console.log('✅ Firebase configuration is complete')
+
 /**
  * Always return a single Firebase app instance
- * (avoids “Firebase App named '[DEFAULT]' already exists” on fast refresh)
+ * (avoids "Firebase App named '[DEFAULT]' already exists" on fast refresh)
  */
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig)
 
